@@ -1,24 +1,32 @@
-# README
+# Product_app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+画像投稿のデモアプリケーションです。
 
-Things you may want to cover:
+## How to use
 
-* Ruby version
+このアプリケーションを動かす場合は、まずリポジトリを手元にクローンしてください。
+次に以下のコマンドで、RubyGemsをインストールしてください。
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+その後、データベースのマイグレーションを実行します。
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+最後にテストを実行し、正常に動作しているか確認してください。
 
-* How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+テストがパスしたらRailsサーバーを立ち上げる準備が整っているはずです。
 
-* Deployment instructions
+``` 
+$ rails server
+```
 
-* ...
+ログインの必要はありません。
