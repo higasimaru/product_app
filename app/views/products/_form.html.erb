@@ -1,0 +1,12 @@
+<%= form_with model: @product, local: true do |f| %>
+  <%= f.fields_for :images do |image| %>
+    <%#= image_tag image.url %>
+    <%= image.label :url, "商品画像" %>
+    <%= image.file_field :url %>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+<% end %>
+  

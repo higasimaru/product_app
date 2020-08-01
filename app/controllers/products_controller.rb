@@ -4,5 +4,10 @@ class ProductsController < ApplicationController
     @products = Product.all.includes(:image)
   end
 
+  def new
+    @product = Product.new
+    @product.images.build
+  end
+
 
 end
