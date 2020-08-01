@@ -1,6 +1,6 @@
 <li>
-  <%= product.images.each do |image| %>
-    <%= image_tag image.url %>
+  <% product.images.each do |image| %>
+    <%= image_tag image.url.url %>
   <% end%>
   <%= product.name %>
   <%= product.price %>
