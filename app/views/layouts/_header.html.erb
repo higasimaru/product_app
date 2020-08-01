@@ -1,5 +1,36 @@
-<header>
+<header class="navbar">
   <div class="container">
-    
+    <%= link_to "Product App", root_path, id: "logo" %>
+    <div class="header-form">
+      <input type="text" class="search-form" placeholder="何をお探しですか？">
+      <button class="btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <nav> 
+      <ul class="nav navbar-left">
+        <li>
+          <i class="fas fa-bars"></i>
+          <span>カテゴリーから探す</span>
+        </li>
+        <li>
+          <i class="fas fa-tag"></i>
+          <span>ブランドから探す</span></li>
+      </ul>
+      <ul class="nav navbar-right">
+        <li>
+          <i class="far fa-heart"></i>
+          <span>いいね!一覧</span>
+        </li>
+        <li>
+          <i class="far fa-bell"></i>
+          <span>お知らせ</span>
+        </li>
+        <li>
+          <i class="fas fa-check"></i>
+          <span>やることリスト</span>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
