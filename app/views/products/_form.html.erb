@@ -1,12 +1,26 @@
 <%= form_with model: @product, local: true do |f| %>
   <%= f.fields_for :images do |image| %>
-    <%#= image_tag image.url %>
-    <%= image.label :url, "商品画像" %>
-    <%= image.file_field :url %>
+    <%#= image_tag image.object.url %>
+    <div class="from-label">
+      <%= image.label :url, "出品画像" %>
+        <span>必須</span>
+    </div>
+    <div class="file-form">
+      <%= image.file_field :url %>
+    </div>   
   <% end %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
+  <div class="form-label">
+    <%= f.label :name %>
+  </div>
+  <div class="name-form">   
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-label">
+    <%= f.label :price %>
+  </div>
+  <div class="price-form">
+    <%= f.number_field :price %>
+  </div>
+  <%= f.submit "出品する", class: "btn" %>
 <% end %>
   
