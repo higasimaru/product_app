@@ -1,4 +1,13 @@
 .row {
+  .products {
+    padding: 20px 300px;
+    overflow: scroll;
+    .product {
+     width: 180px;
+     padding: 10px;
+
+    }
+  }
   .exhibition {
     display: block;
     width: 150px;
