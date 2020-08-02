@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:success] = "出品しました。"
       redirect_to root_url
     else
       render :new

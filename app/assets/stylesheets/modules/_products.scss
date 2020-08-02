@@ -1,3 +1,29 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.row {
+  .exhibition {
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-decoration: none;
+    background-color: red;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 6%;
+    right: 3%;
+    z-index: 1;
+    .exhibition-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      -webkit-transform: translateY(-50%) translateX(-50%); 
+      p {
+        font-size: x-large;
+      }
+      i {
+        font-size: 48px;
+      }
+    }
+  }
+}

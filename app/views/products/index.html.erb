@@ -2,5 +2,12 @@
   <div class="products">
    <%= render partial: "product", collection: @products %>
   </div>
-  <%= link_to "出品する", new_product_path %>
+  
+    <%= link_to new_product_path, class: "exhibition" do %>
+      <div class="exhibition-btn">
+        <p>出品</p>
+        <i class="fa fa-camera"></i>
+      </div>
+    <% end %>
+  
 </div>
