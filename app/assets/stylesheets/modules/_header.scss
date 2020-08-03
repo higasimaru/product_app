@@ -21,8 +21,7 @@
         border-radius: 5px;
         }
       .search-form:focus {
-        border: 1px solid $light-blue;
-        outline: none;
+        @include input-border
       }
       .btn {
         height: 36px;

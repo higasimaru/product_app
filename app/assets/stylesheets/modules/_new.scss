@@ -5,6 +5,10 @@
     font-weight: bold;
     text-align: center;
     padding: 30px;
+    .product-logo {
+      text-decoration: none;
+      color: black;
+    }
   }
   .product-wrapper {
     background-color: $cream;
@@ -17,6 +21,7 @@
       .form-label {
         font-size: 14px;
         font-weight: bold;
+        margin-bottom: 15px;
         span {
           background-color: red;
           color: white;
@@ -27,11 +32,15 @@
         }
       }
       p {
-        margin: 15px 0;
+        margin-bottom: 15px;
         font-size: 14px;
         color: #333333;
       }
-      #file-form {
+      .price-caution {
+        font-weight: bold;
+        color: gray;
+      }
+      #file-label {
         height: 150px;
         width: 100%;
         background-color: $cream;
@@ -48,13 +57,56 @@
           font-size: 12px;
           .fa {
             font-size: x-large;
-            margin-bottom: 10px;
-            
+            margin-bottom: 10px; 
+          }
+        } 
+      }
+      #file-label:hover {
+        border: 1px solid $light-blue;
+      }
+      .name-form {
+        input {
+          width: 100%;
+          height: 48px;
+          background-color: $cream;
+          padding: 0 10px;
+          border: 1px solid gray;
+          border-radius: 5px;
+        }
+        input:focus  {
+          @include input-border
+        }
+      }
+      .price-label { 
+        i {
+          color: #333333;
+          font-size: small;
+          position: relative;
+          left: 235px;
+        }
+        .price-form {
+          width: 285px;
+          height: 48px;
+          background-color: $cream;
+          font-size: larger;
+          font-weight: lighter;
+          text-align: right;
+          border-radius: 5px;
+          position: relative;
+          left: 235px;
+          padding: 0 10px;
+          border: 1px solid gray;
+          &::placeholder {
+            text-align: right;
+          }
+          &:focus {
+            @include input-border
           }
         }
         
+        
       }
+      
     }
-    
   }
 }
