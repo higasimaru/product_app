@@ -1,26 +1,44 @@
 <%= form_with model: @product, local: true do |f| %>
   <%= f.fields_for :images do |image| %>
     <%#= image_tag image.object.url %>
-    <div class="from-label">
-      <%= image.label :url, "出品画像" %>
+    <div class="product-form">
+      <div class="form-label">
+        <%= image.label :url, "出品画像"%>
         <span>必須</span>
+      </div>
+      <p>最大10枚までアップロードできます</p>
+      <label id="file-form">
+        <p>
+          <i class="fa fa-camera"></i><br>
+          ドラッグアンドドロップ<br>
+          またはクリックでファイルをアップロード
+        </p>
+        <div class="file-form">
+          <%= image.file_field :url %>
+        </div>
+      </label>
     </div>
-    <div class="file-form">
-      <%= image.file_field :url %>
-    </div>   
   <% end %>
-  <div class="form-label">
-    <%= f.label :name %>
+  <div class="product-form">
+    <div class="form-label">
+      <%= f.label :name, "商品名" %>
+      <span>必須</span>
+    </div>
+    <div class="name-form">   
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="name-form">   
-    <%= f.text_field :name %>
+  <div class="product-form">
+    <div class="form-label">
+      <%= f.label :price, "販売価格" %>
+      <span>必須</span>
+    </div>
+    <div class="price-form">
+      <%= f.number_field :price %>
+    </div>
   </div>
-  <div class="form-label">
-    <%= f.label :price %>
+  <div class="product-form">
+    <%= f.submit "出品する", class: "btn" %>
   </div>
-  <div class="price-form">
-    <%= f.number_field :price %>
-  </div>
-  <%= f.submit "出品する", class: "btn" %>
 <% end %>
   

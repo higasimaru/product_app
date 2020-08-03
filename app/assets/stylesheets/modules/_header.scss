@@ -1,5 +1,5 @@
 .navbar {
-  padding: 10px 270px 0;
+  padding: 10px 260px 0;
   box-shadow: 0 0 10px 0 gray;
   .container {
     #logo {
@@ -12,24 +12,31 @@
       position: relative;
       display: inline-block;
       .search-form {
-        width: 569px;
+        width: 649px;
         height: 40px;
         margin-left: 100px;
         background-color: $cream;
         padding-left: 10px;
         border: 1px solid;
         border-radius: 5px;
+        }
+      .search-form:focus {
+        border: 1px solid $light-blue;
+        outline: none;
       }
       .btn {
-        height: 38px;
+        height: 36px;
         width: 40px;
         background-color: $cream;
         position: absolute;
-        top: 1px;
-        right: 1px;
+        top: 2px;
+        right: 2px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+      }
+      .btn:focus {
+        outline: none;
       }
     }
     nav { 

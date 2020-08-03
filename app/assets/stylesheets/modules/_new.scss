@@ -1,0 +1,60 @@
+.row {
+  h1 {
+    background-color: $cream;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+  }
+  .product-wrapper {
+    background-color: $cream;
+    .product-form {
+      width: 700px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-bottom: 1px solid $cream;
+      .form-label {
+        font-size: 14px;
+        font-weight: bold;
+        span {
+          background-color: red;
+          color: white;
+          font-size: small;
+          font-weight: bold;
+          padding: 2px 4px;
+          border-radius: 2px;
+        }
+      }
+      p {
+        margin: 15px 0;
+        font-size: 14px;
+        color: #333333;
+      }
+      #file-form {
+        height: 150px;
+        width: 100%;
+        background-color: $cream;
+        display: inline-block;
+        border: 1px dashed gray;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .file-form {
+          display: none;
+        }
+        p {
+          font-size: 12px;
+          .fa {
+            font-size: x-large;
+            margin-bottom: 10px;
+            
+          }
+        }
+        
+      }
+    }
+    
+  }
+}
