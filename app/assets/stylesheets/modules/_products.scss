@@ -1,11 +1,28 @@
 .row {
   .products {
-    padding: 20px 300px;
-    overflow: scroll;
+    background-color: $cream;
+    padding: 20px 270px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
     .product {
-     width: 180px;
-     padding: 10px;
-
+      width: 180px;
+      padding: 10px;
+      li {
+        background-color: white;
+      }
+      .product-images {
+        position: relative;
+      }
+      .product-price {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+      }
+      .product-name {
+        height: 50px;
+        padding: 0 5px 5px;
+      }
     }
   }
   .exhibition {

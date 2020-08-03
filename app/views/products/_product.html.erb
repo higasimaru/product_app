@@ -1,13 +1,13 @@
 <ul class="product">
-  <li>
+  <li class="product-images">
     <% product.images.each do |image| %>
       <%= image_tag image.url.url %>
     <% end%>
-  </li>
-  <li>
-    <%= product.name %>
-  </li>
-  <li>
+    <span class="product-price">
     <%= product.price %>
+    </span>
+  </li>
+  <li class="product-name">
+    <%= product.name %>
   </li> 
 </ul>
