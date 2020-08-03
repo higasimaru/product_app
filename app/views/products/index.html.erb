@@ -1,11 +1,23 @@
 <div class="row">
-  <div class="products">
-   <%= render partial: "product", collection: @products %>
+  <div class="category-navi">
+    <h1>人気のカテゴリー</h1>
+    <ul>
+      <li><a href="#">レディース</a></li>
+      <li><a href="#">メンズ</a></li>
+      <li><a href="#home-appliances">家電・スマホ・カメラ</a></li>
+      <li><a href="#">おもちゃ・ホビー・グッズ</a></li>
+    </ul>
   </div>
-  <%= link_to new_product_path, class: "exhibition" do %>
-    <div class="exhibition-btn">
-      <p>出品</p>
-      <i class="fa fa-camera"></i>
+  <div class="wrapper">
+    <h1><a id="home-appliances">家電・スマホ・カメラ 新着アイテム</a></h1>
+    <div class="products">
+      <%= render partial: "product", collection: @products %>
     </div>
-  <% end %> 
+    <%= link_to new_product_path, class: "exhibition" do %>
+      <div class="exhibition-btn">
+        <p>出品</p>
+        <i class="fa fa-camera"></i>
+      </div>
+    <% end %> 
+  </div>
 </div>
