@@ -4,3 +4,15 @@ $light-blue: #3bacf3;
   border: 1px solid $light-blue;
   outline: none;
 }
+@mixin input-border_bold {
+  border: 1.5px solid blue;
+  border-radius: 5px;
+}
+@mixin link-color {
+  color: $light-blue;
+  text-decoration: none;
+}
+@mixin link-hover {
+  opacity: 0.6;
+  text-decoration: underline;
+}

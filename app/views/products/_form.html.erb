@@ -28,7 +28,7 @@
       <%= f.text_field :name, placeholder: "40文字まで", maxlength: "40" %>
     </div>
   </div>
-  <div class="product-form">
+  <div class="product-form product-form_noline">
     <p class="price-caution">価格　(¥300〜9,999,999)</p>
     <div class="form-label price-label">
       <%= f.label :price, "販売価格" %>
@@ -40,13 +40,26 @@
       <p>販売手数料　(10%)</p>
       <span>ー</span>
     </div>
-  </div>
-  <div class="product-form">
     <div class="price-profit">
       <p>販売利益</p>
       <span>ー</span>
     </div>
+  </div>
+  <div class="product-form product-form_bottom">
     <%= f.submit "出品する", class: "btn" %>
+    <button class="btn btn-draft">下書きに保存</button>
+    <%= link_to "もどる", root_path, class: "return-btn" %>
+  </div>
+  <div class="product-form">
+    <p class="product-caution">
+      禁止されている<a href="#">行為</a>
+      および<a href="#">出品物</a>
+      を必ずご確認下さい。<a href="#">偽ブランド品</a>
+      や<a href="#">盗品物</a>
+      などのなどの販売は犯罪であり、法律に法律により処罰される可能性があります。
+      また、出品をもちまして<a href="#">加盟店規約</a>
+      に同意したことになります。
+    </p>   
   </div>
 <% end %>
   
