@@ -27,6 +27,7 @@
     <div class="name-form">   
       <%= f.text_field :name, placeholder: "40文字まで", maxlength: "40" %>
     </div>
+    <%= display_error_messages(f.object, :name) %>
   </div>
   <div class="product-form product-form_noline">
     <p class="price-caution">価格　(¥300〜9,999,999)</p>
@@ -36,6 +37,7 @@
       <i class="fas fa-yen-sign"></i>
       <%= f.number_field :price, class: "price-form", placeholder: "0" %>    
     </div>
+    <%= display_error_messages(f.object, :price) %>
     <div class="price-fee">
       <p>販売手数料　(10%)</p>
       <span>ー</span>
