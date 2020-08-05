@@ -10,9 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    
-    @product.images.build
+    @product = Product.new(product_params)    
+    @product.images.new if params[:product][:images_attributes].nil?
     if @product.save
       flash[:success] = "出品しました。"
       redirect_to root_url
