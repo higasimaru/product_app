@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'products#index'
-  get '/home', to: 'products#index'
+ 
   get '/products', to: 'products#new' 
   resources :products, except: [:index]
   

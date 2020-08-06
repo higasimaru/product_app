@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  price: 1
+  name: Example Product
+  price: 300
 
 two:
-  name: MyString
-  price: 1
+  name: "Invalid Price"
+  price: 299
