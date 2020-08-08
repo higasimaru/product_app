@@ -1,6 +1,5 @@
 <%= form_with model: @product, local: true do |f| %>
   <%= f.fields_for :images do |image| %>
-    <%#= image_tag image.object.url %>
     <div class="product-form">
       <div class="form-label">
         <%= image.label :url, "出品画像"%>

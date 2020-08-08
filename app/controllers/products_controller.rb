@@ -11,8 +11,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.url = url_params 
-    @product.images.new if @product.url.blank?
+    @product.images.build if @product.images.blank? 
     if @product.save
       flash[:success] = "出品しました。"
       redirect_to root_url
@@ -26,10 +25,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :price, images_attributes: [:url])
     end
-
-    def url_params
-      params.require(:product).permit(images_attributes: :url)
-    end
-
 
 end

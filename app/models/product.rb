@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  attr_accessor :url
   has_many :images
   validates_associated :images
   validates :images, presence: true
@@ -11,7 +10,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :images
 
   def has_images?
-    errors.add(:"images.file", "がありません") if url.blank?
+    errors.add(:"images.file", "がありません") if images[0].url.blank?
   end
 
   
