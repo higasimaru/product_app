@@ -6,16 +6,21 @@
         <span>必須</span>
       </div>
       <p>最大10枚までアップロードできます</p>
-      <label id="file-label" for="file">
-        <p>
-          <i class="fa fa-camera"></i><br>
-          ドラッグアンドドロップ<br>
-          またはクリックでファイルをアップロード
-        </p>
-        <div class="file-form">
-          <%= image.file_field :url, id: "file" %>
-        </div>
-      </label>
+      <div class="file-box">
+        <div class="preview-files"></div>
+        <label id="file-label" for="file">
+          <p>
+            <i class="fa fa-camera"></i><br>
+            <span id="file-message">
+              ドラッグアンドドロップ<br>
+              またはクリックでファイルをアップロード
+            </span>
+          </p>
+          <div class="file-form" data-index="<%=image.index%>">
+            <%= image.file_field :url, id: "file" %>
+          </div>
+        </label>
+      </div>
       <%= display_error_messages(f.object, :"images.file") %>
     </div>
   <% end %>

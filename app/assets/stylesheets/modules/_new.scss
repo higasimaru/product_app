@@ -56,29 +56,57 @@
         font-weight: bold;
         color: gray;
       }
-      #file-label {
-        height: 150px;
-        width: 100%;
-        background-color: $cream;
-        display: inline-block;
-        border: 1px dashed gray;
-        text-align: center;
+      .file-box {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        overflow: hidden;
+        .preview-files {
+          display: flex;
+          .preview-file {
+            margin-right: 10px;
+            background-color: #f5eeee;
+            &:first-child {
+              margin-left: 2px;
+            }
+            .preview-image {
+              width: 115px;
+              height: 120px;
+              padding: 0 15px;
+              border-bottom: 1px solid #c7c5c5;
+            }
+            .remove-btn {
+              color: $light-blue;
+              font-size: small;
+              text-align: center;
+            }
+          }
+        }
         .file-form {
           display: none;
         }
-        p {
-          font-size: 12px;
-          .fa {
-            font-size: x-large;
-            margin-bottom: 10px; 
-          }
-        } 
-      }
-      #file-label:hover {
-        @include input-border_bold;
+        #file-label {
+          height: 150px;
+          width: 100%;
+          background-color: $cream;         
+          border: 1px dashed gray;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            font-size: 12px;
+            margin-bottom: 0;
+            .fa {
+              font-size: x-large;
+            }
+            #file-message {
+              display: inline-block;
+              margin-top: 5px;
+            }
+          } 
+        }
+        #file-label:hover {
+          @include input-border_bold;
+        }
       }
       .name-form {
         input {

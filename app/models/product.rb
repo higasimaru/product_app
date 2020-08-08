@@ -7,7 +7,7 @@ class Product < ApplicationRecord
     greater_than: 299, less_than: 10000000 }
   validate :has_images?
   default_scope -> { order(created_at: :desc) }
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   def has_images?
     errors.add(:"images.file", "がありません") if images[0].url.blank?
