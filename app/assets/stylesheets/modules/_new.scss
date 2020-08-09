@@ -56,10 +56,10 @@
         font-weight: bold;
         color: gray;
       }
-      .file-box {
+      .file-box, .new-file-box{
         display: flex;
         overflow: hidden;
-        .preview-files {
+        .preview-files, .new-preview-files {
           display: flex;
           .preview-file {
             margin-right: 10px;
