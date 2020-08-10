@@ -43,7 +43,7 @@
       <%= f.label :price, "販売価格" %>
       <span>必須</span>
       <i class="fas fa-yen-sign"></i>
-      <%= f.number_field :price, class: "price-form", placeholder: "0" %>    
+      <%= f.number_field :price, class: "price-form", id: "price", placeholder: "0" %>    
     </div>
     <%= display_error_messages(f.object, :price) %>
     <div class="price-fee">
