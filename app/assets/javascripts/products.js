@@ -16,22 +16,43 @@ $(document).on('turbolinks:load', () => {
     let html = `<div class="file-form" data-index="${fileIndex}" id="new-file">
                   <input type="file" name="product[images_attributes][${fileIndex}][url]" id="file">
                   <input type="hidden" name="product[image_attributes][${fileIndex}][url_cache]
-                    id="prduct_images_attributes_${fileIndex}_url_cache>
+                    id="product_images_attributes_${fileIndex}_url_cache>
                 </div>`;
     return html;
   }
 
+  let $fileLabel = $('#file-label');
   let $fileLabelCopy = $('#file-label').clone(true);
   let defaultHTML = $('.price-fee span').text();
   let fileIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  
+  const selectedImages = $('.file-form').map(function() {
+    return $(this).data('index');
+  }).toArray();
+  
+  if ($('.preview-file')[0]) {
+    selectedImages.forEach(function(val) {
+      $(`div[data-index="${val}"]`).appendTo($(`div[data-preview="${val}"]`))
+    })
+    fileIndex.splice(0, selectedImages.length)
+    console.log(fileIndex)
+    $fileLabel.append(buildFileField(selectedImages.slice(-1)[0] + 1))
+
+    if ($('.preview-files .preview-file').length === 5) {
+      $fileLabel.appendTo('.new-file-box')
+    }
+  }
+  
+  
+  
+
   //filefieldに画像を追加した時の処理
-  $('.product-form').on('change', '#file', function(e) {
+  $(document).on('change', '#file', function(e) {
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     let $firstFileLength = $('.preview-files .preview-file').length;
-    let $fileLabel = $('#file-label');
     if ($firstFileLength === 4) {
       $fileLabel.appendTo('.new-file-box');
     } else if ($('.preview-file').length === 9) {
