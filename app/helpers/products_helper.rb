@@ -5,7 +5,7 @@ module ProductsHelper
   end
 
   def display_error_messages(object, attribute)
-    if object.errors.any?
+    if object.errors[attribute].any?
       content_tag(:div, class: "error-messages", id: attribute) do
         object.errors.full_messages_for(attribute).map do |message|
         concat(content_tag(:p, message, class: "error-message"))

@@ -1,37 +1,37 @@
 <%= form_with model: @product, local: true do |f| %>
-  <%= f.fields_for :images do |image| %>
-    <div class="product-form">
-      <div class="form-label">
-        <%= image.label :url, "出品画像"%>
-        <span>必須</span>
+  <div class="product-form">
+    <div class="form-label">
+      <label for="product_images_attributes_0_url">出品画像</label>
+      <span>必須</span>
+    </div>
+    <p>最大10枚までアップロードできます</p>
+    <div class="file-box">
+      <div class="preview-files"> 
       </div>
-      <p>最大10枚までアップロードできます</p>
-      <div class="file-box">
-        <div class="preview-files">
-         
-        </div>
-        <label id="file-label">
-          <p>
-            <i class="fa fa-camera"></i><br>
-            <span id="file-message">
-              ドラッグアンドドロップ<br>
-              またはクリックでファイルをアップロード
-            </span>
-          </p>
+      <label id="file-label">
+        <p>
+          <i class="fa fa-camera"></i><br>
+          <span id="file-message">
+            ドラッグアンドドロップ<br>
+            またはクリックでファイルをアップロード
+          </span>
+        </p>
+        <%= f.fields_for :images do |image| %>
           <div class="file-form" data-index="<%=image.index%>">
             <%= image.file_field :url, id: "file" %>
             <%= image.hidden_field :url_cache %>
           </div>
-        </label>
-      </div>
-      <div class="new-file-box">
-        <div class="new-preview-files">
-          
-        </div>
-      </div>
-      <%= display_error_messages(f.object, :"images.file") %>
+        <% end %>
+      </label>
     </div>
-  <% end %>
+    <div class="new-file-box">
+      <div class="new-preview-files">
+        
+      </div>
+    </div>
+    <%= display_error_messages(f.object, :"images.file") %>
+  </div>
+  
   <div class="product-form">
     <div class="form-label">
       <%= f.label :name, "商品名" %>
