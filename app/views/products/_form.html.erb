@@ -7,7 +7,9 @@
       </div>
       <p>最大10枚までアップロードできます</p>
       <div class="file-box">
-        <div class="preview-files"></div>
+        <div class="preview-files">
+         
+        </div>
         <label id="file-label">
           <p>
             <i class="fa fa-camera"></i><br>
@@ -18,11 +20,14 @@
           </p>
           <div class="file-form" data-index="<%=image.index%>">
             <%= image.file_field :url, id: "file" %>
+            <%= image.hidden_field :url_cache %>
           </div>
         </label>
       </div>
       <div class="new-file-box">
-        <div class="new-preview-files"></div>
+        <div class="new-preview-files">
+          
+        </div>
       </div>
       <%= display_error_messages(f.object, :"images.file") %>
     </div>

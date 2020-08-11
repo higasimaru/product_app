@@ -15,6 +15,8 @@ $(document).on('turbolinks:load', () => {
   const buildFileField = (fileIndex) => {
     let html = `<div class="file-form" data-index="${fileIndex}" id="new-file">
                   <input type="file" name="product[images_attributes][${fileIndex}][url]" id="file">
+                  <input type="hidden" name="product[image_attributes][${fileIndex}][url_cache]
+                    id="prduct_images_attributes_${fileIndex}_url_cache>
                 </div>`;
     return html;
   }
