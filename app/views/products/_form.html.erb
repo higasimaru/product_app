@@ -35,7 +35,15 @@
     </div>
     <div class="new-file-box">
       <div class="new-preview-files">
-        
+        <% if @product.images[5].present? %>
+          <% next_images = @product.images[5..-1] %>
+          <% next_images.each_with_index do |image, i| %>
+            <div class="preview-file" data-preview="<%= i + 5 %>">
+              <%= image_tag image.url.url, class: "preview-image", data: { preview_image: i + 5 } %>
+              <div class="remove-btn">編集</div>
+            </div>
+          <% end %>
+        <% end %>   
       </div>
     </div>
     <%= display_error_messages(f.object, :"images.file") %>

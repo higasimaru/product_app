@@ -22,9 +22,8 @@ $(document).on('turbolinks:load', () => {
   }
 
   let $fileLabel = $('#file-label');
-  let $fileLabelCopy = $('#file-label').clone(true);
   let defaultHTML = $('.price-fee span').text();
-  let fileIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let fileIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   
   const selectedImages = $('.file-form').map(function() {
@@ -36,17 +35,12 @@ $(document).on('turbolinks:load', () => {
       $(`div[data-index="${val}"]`).appendTo($(`div[data-preview="${val}"]`))
     })
     fileIndex.splice(0, selectedImages.length)
-    console.log(fileIndex)
     $fileLabel.append(buildFileField(selectedImages.slice(-1)[0] + 1))
-
+    $('#file-message').hide();
     if ($('.preview-files .preview-file').length === 5) {
-      $fileLabel.appendTo('.new-file-box')
+      $fileLabel.appendTo('.new-file-box') 
     }
   }
-  
-  
-  
-
   //filefieldに画像を追加した時の処理
   $(document).on('change', '#file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -56,7 +50,7 @@ $(document).on('turbolinks:load', () => {
     if ($firstFileLength === 4) {
       $fileLabel.appendTo('.new-file-box');
     } else if ($('.preview-file').length === 9) {
-      $fileLabel.remove();
+      $fileLabel.hide();
     }
     if ( $firstFileLength < 5) {
       $('.preview-files').append(buildPreview(targetIndex, blobUrl));
@@ -81,7 +75,8 @@ $(document).on('turbolinks:load', () => {
       } 
     }
     if ($('.preview-file').length === 9) {
-      $('.new-file-box').append($fileLabelCopy);    
+      $fileLabel.show();
+      $('#file-message').hide();   
     }    
   });
   //販売価格を入力した時の手数料と利益を表示する処理
