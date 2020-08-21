@@ -1,4 +1,7 @@
 <%= form_with model: @product, local: true do |f| %>
+  <div class="preview-modal-container">
+    <%= render "products/modal"%>  
+  </div>  
   <div class="product-form">
     <div class="form-label">
       <label for="product_images_attributes_0_url">出品画像</label>
@@ -7,15 +10,7 @@
     <p>最大10枚までアップロードできます</p>
     <div class="file-box">
       <div class="preview-files"> 
-        <% if @product.images[0].url.present? %>
-          <% images = @product.images[0..4] %> 
-          <% images.each_with_index do |image, i| %>
-            <div class="preview-file" data-preview="<%= i %>">
-              <%= image_tag image.url.url, class: "preview-image", data: { preview_image: i } %>
-              <div class="remove-btn">編集</div>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render partial: "shared/upper_preview" %>
       </div>
       <label id="file-label">
         <p>
@@ -35,20 +30,11 @@
     </div>
     <div class="new-file-box">
       <div class="new-preview-files">
-        <% if @product.images[5].present? %>
-          <% next_images = @product.images[5..-1] %>
-          <% next_images.each_with_index do |image, i| %>
-            <div class="preview-file" data-preview="<%= i + 5 %>">
-              <%= image_tag image.url.url, class: "preview-image", data: { preview_image: i + 5 } %>
-              <div class="remove-btn">編集</div>
-            </div>
-          <% end %>
-        <% end %>   
+        <%= render "shared/under_preview" %>   
       </div>
     </div>
     <%= display_error_messages(f.object, :"images.file") %>
   </div>
-  
   <div class="product-form">
     <div class="form-label">
       <%= f.label :name, "商品名" %>

@@ -9,9 +9,69 @@
       text-decoration: none;
       color: black;
     }
-  }
+  } 
   .product-wrapper {
     background-color: $cream;
+    .preview-modal-container {
+      .preview-modal-wrapper {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        display: none;
+        .preview-modal {
+          height: 80%;
+          width: 70%;
+          background-color: white;
+          margin: 0 auto;
+          padding: 64px;
+          border-radius: 5px;
+          .preview-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            p {
+              font-size: 17px;
+            }
+            .remove-btn {
+              font-size: 14px;
+              color: $light-blue;
+              line-height: 2em;
+              cursor: pointer;
+            }
+          }
+          .modal-image-box {
+            text-align: center;
+            .modal-image-frame {
+              .modal-image {
+                height: 320px;
+                width: 280px; 
+              }
+            }
+            .modal-slide {
+              margin: 20px 0 5px 0;
+              .small-camera {
+                font-size: 20px;
+              }
+              input {
+                -webkit-appearance: none;
+                
+                height: 40px;
+                width: 240px
+                
+              }
+              .large-camera {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
     .product-form {
       width: 700px;
       margin: 0 auto;
@@ -73,7 +133,7 @@
               padding: 0 15px;
               border-bottom: 1px solid #c7c5c5;
             }
-            .remove-btn {
+            .edit-btn {
               color: $light-blue;
               font-size: small;
               text-align: center;

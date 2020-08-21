@@ -1,0 +1,29 @@
+<% if @product.images[0].url.present? %>
+  <% @product.images.each_with_index do |image, i| %>
+    <div class="preview-modal-wrapper" data-modal="<%= i %>">
+      <div class="preview-modal">
+        <div class="preview-nav">
+          <p>写真を切り取る</p>
+          <div class="remove-btn">
+            <i class="fas fa-trash-alt"></i>
+            <span>削除する</span>
+          </div>
+        </div>
+        <div class="modal-image-box">
+          <div class="modal-image-frame">
+            <%= image_tag image.url.url, data: { modal_image: i }, class: "modal-image" %>
+          </div>
+          <div class="modal-slide">
+            <i class="fas fa-camera small-camera"></i>
+            <input type="range">
+            <i class="fas fa-camera large-camera"></i>
+          </div>
+        </div>
+        <div class="submit-btns">
+          <button class="cancel-btn">キャンセル</button>
+          <button class="decision-btn">決定</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

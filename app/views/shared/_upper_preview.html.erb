@@ -1,0 +1,9 @@
+<% if @product.images[0].url.present? %>
+  <% images = @product.images[0..4] %> 
+  <% images.each_with_index do |image, i| %>
+    <div class="preview-file" data-preview="<%= i %>">
+      <%= image_tag image.url.url, class: "preview-image", data: { preview_image: i } %>
+      <div class="edit-btn">編集</div>
+    </div>
+  <% end %>
+<% end %>
