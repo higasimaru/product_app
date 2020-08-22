@@ -14,7 +14,7 @@
     <div class="products">
       <%= render partial: "product", collection: @products %>
     </div>
-    <%= link_to new_product_path, class: "exhibition" do %>
+    <%= link_to new_product_path, class: "exhibition", data: { turbolinks: false} do %>
       <div class="exhibition-btn">
         <p>出品</p>
         <i class="fa fa-camera"></i>
