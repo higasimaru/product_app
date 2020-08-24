@@ -23,9 +23,10 @@
         top: 0;
         z-index: 1;
         display: none;
+        padding: 56px 0;
         .preview-modal {
-          height: 80%;
-          width: 70%;
+          height: 675px;
+          width: 600px;
           background-color: white;
           margin: 0 auto;
           padding: 64px;
@@ -36,6 +37,8 @@
             margin-bottom: 32px;
             p {
               font-size: 17px;
+              font-weight: bold;
+              color: #333333;
             }
             .remove-btn {
               font-size: 14px;
@@ -49,7 +52,7 @@
             .modal-image-frame {
               .modal-image {
                 height: 320px;
-                width: 280px; 
+                width: 300px; 
               }
             }
             .modal-slide {
@@ -59,13 +62,46 @@
               }
               input {
                 -webkit-appearance: none;
-                
-                height: 40px;
-                width: 240px
-                
+                appearance: none;
+                height: 16px;
+                width: 220px;
+                background-color: $cream;
+                outline: none;
+                margin: 0 15px;
+                border-radius: 10px;
+                box-shadow: 0 0 6px inset rgb(158, 157, 157);
               }
               .large-camera {
                 font-size: 24px;
+              }
+            }
+          }
+          .submit-btns {
+            margin-top: 40px;
+            .modal-btn {
+              height: 48px;
+              width: 228px;
+              text-align: center;
+              background-color: $light-gray;
+              color: #222222;
+              font-size: 16px;
+              font-weight: bold;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              &:focus {
+                @include input-border_bold
+              }
+              &:hover {
+                @include input-hover_gray
+              }
+            }
+            .decision-btn {
+              float: right;
+              background-color: red;
+              color: white;
+              &:hover {
+                @include input-hover_red
               }
             }
           }
@@ -259,19 +295,17 @@
         border-radius: 5px;
         cursor: pointer;
         &:focus {
-          @include input-border_bold;
+          @include input-border_bold
         }
         &:hover {
-          background-color: #cf0404;
-          transition: 0.6s;
+          @include input-hover_red
         }
       }
       .btn-draft {
-        background-color: #cfcccc;
+        background-color: $light-gray;
         color: black;
         &:hover {
-          background-color: #bbb8b8;
-          transition: 0.6s;
+          @include input-hover_gray
         }
       }
       .return-btn {

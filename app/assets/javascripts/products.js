@@ -33,8 +33,8 @@ $(document).on('turbolinks:load', () => {
                       </div>
                     </div>
                     <div class="submit-btns">
-                      <button class="cancel-btn">キャンセル</button>
-                      <button class="decision-btn">決定</button>
+                      <input type="button" class="modal-btn" value="キャンセル">
+                      <input type="button" class="modal-btn decision-btn" value="完了">
                     </div>
                   </div>
                 </div>`;

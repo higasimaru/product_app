@@ -1,12 +1,15 @@
 $cream: #f3eded;
+$light-gray: #cfcccc;
+$hover-gray: #bbb8b8;
+$hover-red: #cf0404;
 $light-blue: #3bacf3;
 @mixin input-border {
   border: 1px solid $light-blue;
   outline: none;
 }
-@mixin input-border_bold {
-  border: 1.5px solid blue;
-  border-radius: 5px;
+@mixin input-border-bold {
+  outline: none;
+  border: 1.5px solid blue;  
 }
 @mixin link-color {
   color: $light-blue;
@@ -15,4 +18,10 @@ $light-blue: #3bacf3;
 @mixin link-hover {
   opacity: 0.6;
   text-decoration: underline;
+}
+@mixin input-hover_red {
+  background-color: $hover-red;
+}
+@mixin input-hover_gray {
+  background-color: $hover-gray;
 }
