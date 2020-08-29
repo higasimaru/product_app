@@ -1,11 +1,14 @@
 <ul class="product">
-  <li class="product-images">
-    <% product.images.each do |image| %>
-      <%= image_tag image.url.url %>
-    <% end%>
+  <li class="main-image">
+    <%= image_tag product.images.first.url.url %>
     <span class="product-price">
     <%= convert_to_yen(product.price) %>
     </span>
+  </li>
+  <li class="sub-images clearfix">
+    <% product.images.each do |image| %>
+      <%= image_tag image.url.url, class: "sub-image" %>
+    <% end %>
   </li>
   <li class="product-name">
     <span><%= product.name %></span>

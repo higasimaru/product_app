@@ -77,11 +77,27 @@
         &:hover {
           border: 2px solid $light-blue;
         }
-        li {
-          background-color: white;
-        }
-        .product-images {
+        .main-image {
           position: relative;
+          img {
+            vertical-align: bottom;
+          }
+        }
+        .sub-images {
+          min-height: 64px;
+          .sub-image {
+            height: 32px;
+            width: 32px;
+            display: block;
+            float: left;
+          }
+        }
+        .clearfix:after {
+          content: "";
+          display: block;
+          clear: both;
+          height: 0;
+          visibility: hidden;
         }
         .product-price {
           position: absolute;
@@ -95,6 +111,7 @@
         .product-name {
           height: 50px;
           padding: 0 5px 5px;
+          background-color: white;
           word-wrap: break-word;
           overflow: hidden;
         }
