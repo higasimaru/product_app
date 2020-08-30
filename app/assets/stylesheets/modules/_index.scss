@@ -72,10 +72,9 @@
       .product {
         width: 160px;
         margin: 10px;
-        border: 1px solid $cream;
         box-shadow: 0 3px 6px -4px;
-        &:hover {
-          border: 1px solid $light-blue;
+        &:hover {          
+          outline: 1px solid $light-blue;
         }
         .main-image {
           height: 180px;
@@ -93,12 +92,10 @@
             width: 32px;
             display: block;
             float: left;
-          }
-          .hide-image {
             opacity: 0.4;
           }
-          .sub-image:first-child {
-            opacity: unset;
+          .active {
+            opacity: 1;
           }
         }
         .clearfix:after {
