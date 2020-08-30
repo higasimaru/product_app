@@ -70,15 +70,18 @@
       justify-content: start;
       flex-wrap: wrap;
       .product {
-        width: 164px;
+        width: 160px;
         margin: 10px;
-        border: 2px solid $cream;
+        border: 1px solid $cream;
         box-shadow: 0 3px 6px -4px;
         &:hover {
-          border: 2px solid $light-blue;
+          border: 1px solid $light-blue;
         }
         .main-image {
+          height: 180px;
           position: relative;
+          overflow: scroll;
+          display: flex;
           img {
             vertical-align: bottom;
           }
@@ -90,6 +93,12 @@
             width: 32px;
             display: block;
             float: left;
+          }
+          .hide-image {
+            opacity: 0.4;
+          }
+          .sub-image:first-child {
+            opacity: unset;
           }
         }
         .clearfix:after {
